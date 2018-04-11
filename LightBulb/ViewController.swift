@@ -21,8 +21,25 @@ class ViewController: UIViewController {
         
     }
     
+    func changeColor(color: UIColor) {
+        lightBulb.backgroundColor = color
+    }
+    
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            changeColor(color: UIColor.red)
+        case 1:
+            changeColor(color: UIColor.yellow)
+        case 2:
+            changeColor(color: UIColor.blue)
+        case 3:
+            changeColor(color: UIColor.green)
+        default:
+            print("Color not found")
+        }
         
         print(sender.selectedSegmentIndex)
         
